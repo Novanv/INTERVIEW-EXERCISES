@@ -8,16 +8,12 @@
 
 ## Example
 
-<<<<<<< HEAD
-giải thích:
-=======
 Given the following data:
 
 - **Anchor**: `[[0.5, 0.1], [0.3, 0.4]]`
 - **Positives**: `[[[0.4, 0.2], [0.45, 0.15]], [[0.3, 0.5], [0.35, 0.45]]]`
 - **Negatives**: `[[[0.6, 0.9], [0.7, 0.8], [0.65, 0.85], [0.75, 0.75], [0.8, 0.7]], [[0.6, 0.9], [0.7, 0.8], [0.65, 0.85], [0.75, 0.75], [0.8, 0.7]]]`
 - **Alpha**: `0.2`
->>>>>>> 6cc9b04112bffd4eebaa3e0f5d028ba3b4102e2a
 
 ### Distance Calculation
 
@@ -51,17 +47,17 @@ Given the following data:
 
 #### Triplet Loss for A1:
 
-Triplet Loss=max(0.106−0.732+0.2,0)=max(−0.426,0)=0
+Triplet Loss=max \text{Triplet Loss} = \max(0.106 - 0.732 + 0.2, 0) = \max(-0.426, 0) = 0 
 
 #### Triplet Loss for A2:
 
 Similarly calculated, resulting in:
 
-Triplet Loss=max(0−0.5+0.2,0)=max(−0.3,0)=0
+ \text{Triplet Loss} = \max(0 - 0.5 + 0.2, 0) = \max(-0.3, 0) = 0  \text{Triplet Loss} = \max(0 - 0.5 + 0.2, 0) = \max(-0.3, 0) = 0 
 
 ### Total Loss:
 
-(0+0)/2 = 0
+ \frac{0 + 0}{2} = 0  \frac{0 + 0}{2} = 0 
 
 ### Conclusion
 
