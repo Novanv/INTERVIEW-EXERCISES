@@ -5,7 +5,7 @@ This project implements a deep learning model for optical character classificati
 ## Project Structure
 
 - **data**: Contains the MNIST dataset in ARFF format.
-- **mnist_triplet_loss.py**: Main script that integrates the entire pipeline (data loading, model training, and evaluation).
+- **main.py**: Main script that integrates the entire pipeline (data loading, model training, and evaluation).
 - **load_data.py**: Handles data loading, preprocessing, and visualization.
 - **model.py**: Defines the neural network architecture and training procedures.
 - **triplet_loss.py**: Implements the Triplet Loss function and triplet generation.
@@ -24,7 +24,7 @@ This project implements a deep learning model for optical character classificati
 3. **Run the Project**: Execute the main script to run the entire pipeline.
 
     ```bash
-    python mnist_triplet_loss.py
+    python main.py
     ```
 
 ## Explanation of the Approach
