@@ -12,7 +12,7 @@
 
 # Extended Triplet Loss Explanation
 
-![Extended Triplet Loss](data/mutil_samples.png)
+<image src = "data/mutil_samples.png">
 
 
 - **P** is the set of positive samples.
