@@ -3,7 +3,7 @@
 Triplet Loss là một hàm mất mát thường được sử dụng trong các vấn đề Image Regconition và Matching Problems, đặc biệt là trong các mô hình Deep LEarning. Mục tiêu của Triplet Loss là đảm bảo rằng các mẫu thuộc cùng một lớp gần nhau hơn trong không gian đặc trưng so với các mẫu thuộc các lớp khác nhau.
 
 
-# 2. Triplet Loss Explanation
+## 2. Triplet Loss Explanation
 <image src = "https://github.com/Novanv/INTERVIEW-EXERCISES/blob/master/EXERCISES_2/data/one_sample.png">
 
 Trong đó
@@ -15,7 +15,7 @@ Trong đó
 
 
 
-# 3. Extended Triplet Loss Explanation
+## 3. Extended Triplet Loss Explanation
 
 <image src = "https://github.com/Novanv/INTERVIEW-EXERCISES/blob/master/EXERCISES_2/data/multi_samples.png">
 
