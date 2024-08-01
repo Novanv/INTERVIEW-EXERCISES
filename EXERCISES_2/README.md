@@ -12,7 +12,7 @@
 
 # Extended Triplet Loss Explanation
 
-$$ \mathcal{L}(a, P, N) = \max \left( 0, \frac{1}{|P|} \sum_{p \in P} \|f(a) - f(p)\|_2^2 - \frac{1}{|N|} \sum_{n \in N} \|f(a) - f(n)\|_2^2 + \alpha \right) $$
+`L(a, P, N) = max(0, (1/|P|) Σ (||f(a) - f(p)||²) - (1/|N|) Σ (||f(a) - f(n)||²) + α)`
 
 - **P** is the set of positive samples.
 - **N** is the set of negative samples.
