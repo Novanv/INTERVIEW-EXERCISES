@@ -1,10 +1,10 @@
 import numpy as np
 from sklearn.neighbors import KNeighborsClassifier
 from model import NeuralNetwork
-from triplet_loss import get_triplets, triplet_loss
+from utils import get_triplets, triplet_loss
 import config
 
-def train_model(X_train, y_train):
+def train(X_train, y_train):
     model = NeuralNetwork(config.INPUT_SIZE, config.HIDDEN_SIZE, config.OUTPUT_SIZE)
     for epoch in range(config.NUM_EPOCHS):
         triplets = get_triplets(X_train, y_train, config.BATCH_SIZE)
@@ -34,7 +34,7 @@ def train_model(X_train, y_train):
         print(f'Epoch {epoch + 1}/{config.NUM_EPOCHS}, Loss: {total_loss / config.BATCH_SIZE}')
     return model
 
-def evaluate_model(model, X_test, y_test):
+def evaluate(model, X_test, y_test):
     embeddings = []
     for x in X_test:
         embedding = model.forward(x.reshape(1, -1))
