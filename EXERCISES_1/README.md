@@ -13,4 +13,4 @@ This dataset is used for training and testing.
 Hồi quy logistic là một thuật toán học máy có giám sát nhằm hoàn thành các nhiệm vụ phân loại nhị phân bằng cách dự đoán xác suất của một kết quả, sự kiện hoặc quan sát. Mô hình đưa ra kết quả nhị phân hoặc phân đôi được giới hạn ở hai kết quả có thể xảy ra: có/không, 0/1 hoặc đúng/sai
 
 ## Logistic Regression – Sigmoid Function
-<image src = "[EXERCISES_1/data/Logistic_Regression.png](https://github.com/Novanv/INTERVIEW-EXERCISES/blob/master/EXERCISES_1/data/Logistic_Regression.png)">
+<image src = "(https://github.com/Novanv/INTERVIEW-EXERCISES/blob/master/EXERCISES_1/data/Logistic_Regression.png)">
