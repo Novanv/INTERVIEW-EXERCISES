@@ -4,13 +4,13 @@ from model import NeuralNetwork
 from utils import get_triplets, triplet_loss
 import config
 
-def train(X_train, y_train):
+def train(X_train, y_train, save_path='tripel_weights.npy'):
     model = NeuralNetwork(config.INPUT_SIZE, config.HIDDEN_SIZE, config.OUTPUT_SIZE)
     for epoch in range(config.NUM_EPOCHS):
         triplets = get_triplets(X_train, y_train, config.BATCH_SIZE)
         total_loss = 0
         for anchor, positive, negative in triplets:
-            anchor, positive, negative =  anchor.reshape(1, -1), positive.reshape(1, -1), negative.reshape(1, -1)
+            anchor, positive, negative = anchor.reshape(1, -1), positive.reshape(1, -1), negative.reshape(1, -1)
             anchor_out = model.forward(anchor)
             positive_out = model.forward(positive)
             negative_out = model.forward(negative)
@@ -32,6 +32,15 @@ def train(X_train, y_train):
             model.backward(negative, d_negative, config.LEARNING_RATE)
 
         print(f'Epoch {epoch + 1}/{config.NUM_EPOCHS}, Loss: {total_loss / config.BATCH_SIZE}')
+    
+    # Save the model weights
+    weights = {
+        'W1': model.W1,
+        'b1': model.b1,
+        'W2': model.W2,
+        'b2': model.b2
+    }
+    np.save(save_path, weights)
     return model
 
 def evaluate(model, X_test, y_test):

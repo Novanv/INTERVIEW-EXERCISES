@@ -1,3 +1,4 @@
 EXERCISES_3/__pycache__/
 EXERCISES_3/data/mnist_784.arff
 EXERCISES_1/__pycache__/
+EXERCISES_3/weights/tripel_weights.npy
