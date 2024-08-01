@@ -1,6 +1,6 @@
 # Triplet Loss Explanation
 
-<image src = "data/one_sample.png">
+<image src = "https://github.com/Novanv/INTERVIEW-EXERCISES/blob/master/EXERCISES_2/data/one_sample.png">
 
 - **a** is the anchor sample.
 - **p** is the positive sample (same class as anchor).
@@ -12,7 +12,7 @@
 
 # Extended Triplet Loss Explanation
 
-<image src = "data/mutil_samples.png">
+<image src = "https://github.com/Novanv/INTERVIEW-EXERCISES/blob/master/EXERCISES_2/data/multi_samples.png">
 
 
 - **P** is the set of positive samples.
