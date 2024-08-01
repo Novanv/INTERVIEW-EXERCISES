@@ -41,7 +41,7 @@ def evaluate(model, X_test, y_test):
         embeddings.append(embedding)
     embeddings = np.array(embeddings).reshape(X_test.shape[0], -1)
 
-    knn = KNeighborsClassifier(n_neighbors=3)
+    knn = KNeighborsClassifier(n_neighbors=10)
     knn.fit(embeddings, y_test)
     accuracy = knn.score(embeddings, y_test)
     print(f'Accuracy: {accuracy * 100:.2f}%')
