@@ -1,78 +1,73 @@
-# MNIST Triplet Loss Classification
+# Phân loại MNIST với Triplet Loss
 
-This project implements a deep learning model for optical character classification using the MNIST dataset, employing the Triplet Loss function for training. The model is implemented using only NumPy, with the goal of providing a hands-on understanding of neural networks and triplet loss.
+Dự án này triển khai một mô hình học sâu để phân loại ký tự quang học sử dụng tập dữ liệu MNIST, áp dụng hàm mất mát Triplet Loss trong quá trình huấn luyện. Mô hình được triển khai chỉ với NumPy, với mục tiêu cung cấp sự hiểu biết trực tiếp về mạng nơ-ron và triplet loss.
 
-## Project Structure
+## Cài đặt
 
-- **data**: Contains the MNIST dataset in ARFF format.
-- **main.py**: Main script that integrates the entire pipeline (data loading, model training, and evaluation).
-- **load_data.py**: Handles data loading, preprocessing, and visualization.
-- **model.py**: Defines the neural network architecture and training procedures.
-- **triplet_loss.py**: Implements the Triplet Loss function and triplet generation.
-- **config.py**: Contains configuration parameters for the project.
-
-## Setup
-
-1. **Install Dependencies**: Ensure you have the required Python libraries installed. You can use `pip` or `conda` for package management. This project requires NumPy, SciPy, and scikit-learn.
+1. **Cài đặt các Thư viện Cần Thiết**: Đảm bảo bạn đã cài đặt các thư viện Python cần thiết. Bạn có thể sử dụng `pip` hoặc `conda` để quản lý gói. Dự án này yêu cầu NumPy, SciPy và scikit-learn.
 
     ```bash
     pip install numpy scipy scikit-learn matplotlib
     ```
 
-2. **Prepare Data**: Place your MNIST dataset file (`mnist_784.arff`) in the `data/` directory.
+2. **Chuẩn bị Dữ Liệu**: Đặt tệp dữ liệu MNIST của bạn (`mnist_784.arff`) vào thư mục `data/`.
 
-You can download the MNIST dataset from OpenML using the following link:
+Bạn có thể tải xuống tập dữ liệu MNIST từ OpenML bằng liên kết sau:
 
-[Download MNIST Dataset](https://www.openml.org/search?type=data&sort=runs&id=554&status=active)
+[Tải xuống Tập dữ liệu MNIST](https://www.openml.org/search?type=data&sort=runs&id=554&status=active)
 
-This dataset is used for training and testing.
+Tập dữ liệu này được sử dụng cho việc huấn luyện và kiểm tra.
 
-3. **Run the Project**: Execute the main script to run the entire pipeline.
+3. **Chạy Dự Án**: Thực thi tập lệnh chính để chạy toàn bộ quy trình.
 
     ```bash
     python main.py
     ```
 
-## Explanation of the Approach
+## Giải thích Phương Pháp
 
-1. **Data Loading and Preprocessing**:
-   - The MNIST dataset is loaded from an ARFF file and split into training and test sets.
-   - Data is normalized to ensure consistent input scaling.
+1. **Tải và Tiền Xử Lý Dữ Liệu**:
+   - Tập dữ liệu MNIST được tải từ tệp ARFF và phân chia thành tập huấn luyện và tập kiểm tra.
+   - Dữ liệu được chuẩn hóa để đảm bảo tỉ lệ đầu vào nhất quán.
 
-2. **Model Architecture**:
-   - A simple neural network with one hidden layer is used for embedding generation.
-   - The forward pass applies ReLU activation and linear transformation to produce embeddings.
+2. **Kiến Trúc Mô Hình**:
+   - Sử dụng một mạng nơ-ron đơn giản với một lớp ẩn để tạo ra các embedding.
+   - Phép truyền trực tiếp áp dụng kích hoạt ReLU và biến đổi tuyến tính để tạo ra các embedding.
 
-3. **Triplet Loss Function**:
-   - Triplet Loss aims to ensure that an anchor example is closer to positive examples (same class) than to negative examples (different class) by a margin.
-   - Triplets are generated during training, and the loss function penalizes embeddings that do not meet the desired similarity constraints.
+3. **Hàm Mất Mát Triplet**:
+   - Triplet Loss nhằm đảm bảo rằng một ví dụ anchor gần gũi hơn với các ví dụ dương (cùng lớp) hơn là các ví dụ âm (khác lớp) theo một biên nhất định.
+   - Các triplet được tạo ra trong quá trình huấn luyện, và hàm mất mát phạt các embedding không đáp ứng các ràng buộc về sự tương tự mong muốn.
 
-4. **Training and Evaluation**:
-   - The model is trained using the Triplet Loss function, and embeddings are learned.
-   - For evaluation, embeddings are used with a k-Nearest Neighbors (k-NN) classifier to assess classification accuracy.
+4. **Huấn luyện và Đánh giá**:
+   - Mô hình được huấn luyện sử dụng hàm mất mát Triplet Loss và các embedding được học.
+   - Để đánh giá, các embedding được sử dụng với bộ phân loại k-Nearest Neighbors (k-NN) để đánh giá độ chính xác phân loại.
 
-## Advantages of Deep Learning Approach with Triplet Loss
+## Ưu điểm của Phương Pháp Học Sâu với Triplet Loss
 
-1. **Feature Learning**: Deep learning models, especially with triplet loss, can learn meaningful feature representations, potentially leading to better generalization on unseen data.
-2. **Flexibility**: Neural networks can be easily extended with more layers or different architectures to improve performance.
-3. **Robustness**: Triplet Loss can be more robust to noisy data and variations compared to traditional classification methods.
+1. **Học Đặc Trưng**: Các mô hình học sâu, đặc biệt là với triplet loss, có thể học được các đại diện đặc trưng có ý nghĩa, từ đó có thể dẫn đến khả năng tổng quát tốt hơn trên dữ liệu chưa thấy.
+2. **Tính Linh Hoạt**: Mạng nơ-ron có thể dễ dàng mở rộng với nhiều lớp hoặc kiến trúc khác nhau để cải thiện hiệu suất.
+3. **Khả Năng Chịu Đựng Tốt**: Triplet Loss có thể chịu đựng tốt hơn đối với dữ liệu nhiễu và biến thể so với các phương pháp phân loại truyền thống.
 
-## Disadvantages
+## Nhược điểm
 
-1. **Complexity**: Training deep learning models can be computationally expensive and require more resources compared to simpler machine learning models.
-2. **Triplet Mining**: Generating effective triplets is crucial and can be challenging. Poor triplet selection can negatively impact model performance.
-3. **Overfitting Risk**: With more complex models, there's a risk of overfitting, especially if the dataset is not sufficiently large or diverse.
+1. **Độ Phức Tạp**: Huấn luyện các mô hình học sâu có thể tốn kém về tính toán và yêu cầu nhiều tài nguyên hơn so với các mô hình học máy đơn giản hơn.
+2. **Khai Thác Triplet**: Việc tạo ra các triplet hiệu quả là rất quan trọng và có thể gặp khó khăn. Việc chọn triplet kém có thể ảnh hưởng tiêu cực đến hiệu suất mô hình.
+3. **Rủi Ro Overfitting**: Với các mô hình phức tạp hơn, có nguy cơ overfitting, đặc biệt nếu tập dữ liệu không đủ lớn hoặc đa dạng.
 
-## Comparison with Previous Machine Learning Method
+## So sánh với Phương Pháp Machine Learning Trước Đó
 
-- **Machine Learning Method**: The previous approach used Logistic Regression with a one-vs-all strategy. This method is straightforward and efficient for smaller datasets but may struggle with more complex data patterns.
-- **Deep Learning Method**: The deep learning approach with triplet loss can potentially provide better performance on more complex problems by learning richer feature representations. However, it requires careful handling of hyperparameters and can be more resource-intensive.
+- **Phương Pháp Machine Learning**: Phương pháp trước đó sử dụng Logistic Regression với chiến lược one-vs-all. Phương pháp này đơn giản và hiệu quả cho các tập dữ liệu nhỏ nhưng có thể gặp khó khăn với các mẫu dữ liệu phức tạp hơn.
+- **Phương Pháp Học Sâu**: Phương pháp học sâu với triplet loss có thể cung cấp hiệu suất tốt hơn cho các bài toán phức tạp hơn bằng cách học các đại diện đặc trưng phong phú hơn. Tuy nhiên, nó yêu cầu quản lý các siêu tham số cẩn thận và có thể tiêu tốn nhiều tài nguyên hơn.
 
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+## Cấu Trúc Dự Án
+- `config.py`: Chứa các tham số cấu hình cho dự án.
+- `data`: Chứa tập dữ liệu MNIST ở định dạng ARFF.
+- `utils.py`: Xử lý việc tải dữ liệu, tiền xử lý và trực quan hóa, triển khai hàm mất mát Triplet Loss và tạo triplet.
+- `model.py`: Định nghĩa kiến trúc mạng nơ-ron và quy trình huấn luyện.
+- `inference.py`: huấn luyện và đánh giá mô hình
+- `main.py`: Tập lệnh chính tích hợp toàn bộ quy trình.
 
 ## Acknowledgments
 
-- The MNIST dataset is provided by Yann LeCun and the AT&T Labs.
-- Special thanks to the contributors and libraries that make this project possible.
+- Tập dữ liệu MNIST được cung cấp bởi Yann LeCun và AT&T Labs.
+- Xin cảm ơn các cộng tác viên và thư viện đã làm cho dự án này trở nên khả thi.
