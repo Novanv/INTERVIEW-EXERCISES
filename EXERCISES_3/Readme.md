@@ -21,6 +21,12 @@ This project implements a deep learning model for optical character classificati
 
 2. **Prepare Data**: Place your MNIST dataset file (`mnist_784.arff`) in the `data/` directory.
 
+You can download the MNIST dataset from OpenML using the following link:
+
+[Download MNIST Dataset](https://www.openml.org/search?type=data&sort=runs&id=554&status=active)
+
+This dataset is used for training and testing the OCR model.
+
 3. **Run the Project**: Execute the main script to run the entire pipeline.
 
     ```bash
